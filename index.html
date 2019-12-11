@@ -6,12 +6,50 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <style>.cls-1 {
+        fill: #fff;
+        stroke: #1d1d1b;
+        stroke-miterlimit: 10;
+        stroke-dasharray: 50;
+        transition: 3s;
+    }</style>
+
 </head>
 <body>
 
-    <p>meep ._.</p>
-    <div class="rofl"></div>
-    <p>Chris stinkt</p>
+<p>meep ._.</p>
+<div class="rofl"></div>
+<p>Chris stinkt</p>
 
+<svg id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 342.078 132.501">
+
+    <path class="cls-1"
+          d="M146.767,292.378S-25.677,147.193,125.434,170.3s67.555,161.185,166.518,122.074,152.3-78.222,77.037-113.778"
+          transform="translate(-62.891 -167.311)"/>
+</svg>
+
+<button id="button">Klick mich hart du Sau!</button>
+
+<script>
+    var path = document.querySelector('.cls-1');
+    console.log(path.getTotalLength());
+
+    path.style.strokeDasharray = path.getTotalLength();
+    path.style.strokeDashoffset = path.getTotalLength();
+
+    var button = document.querySelector('#button');
+    var toggler = true;
+
+    button.addEventListener('click', function () {
+        if (toggler) {
+            path.style.strokeDashoffset = 0;
+        } else {
+            path.style.strokeDashoffset = path.getTotalLength();
+        }
+        toggler = !toggler;
+    });
+</script>
 </body>
 </html>
+
